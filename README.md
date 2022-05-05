@@ -155,6 +155,8 @@ sock.ev.on ('creds.update', saveState)
 
 **Note**: When a message is received/sent, due to signal sessions needing updating, the auth keys (`authState.keys`) will update. Whenever that happens, you must save the updated keys. Not doing so will prevent your messages from reaching the recipient & other unexpected consequences. The `useSingleFileAuthState` function automatically takes care of that, but for any other serious implementation -- you will need to be very careful with the key state management.
 
+**Example Redis**: You may take a look the redis storage implementation at `./Example/example-session-redis-storage.ts` to acquire, update & remove the authentication state data.
+
 ## Listening to Connection Updates
 
 Baileys now fires the `connection.update` event to let you know something has updated in the connection. This data has the following structure:
